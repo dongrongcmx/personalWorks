@@ -1,0 +1,28 @@
+{
+  "name": "personalworks",
+  "version": "1.0.0",
+  "description": "个人作品",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dongrongcmx/personalWorks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dongrongcmx/personalWorks/issues"
+  },
+  "homepage": "https://github.com/dongrongcmx/personalWorks#readme"
+}
