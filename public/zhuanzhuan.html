@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="referrer"content="always">
+		<title></title>
+		<link rel="stylesheet" href="zhuanzhuan/css/style.css?version=2.6.4.17" />
+		<script type="text/javascript" src="zhuanzhuan/js/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<audio id="audio" src="zhuanzhuan/mp3/bg.mp3" preload="preload" controls loop></audio>
+		<audio id="btn_audio" src="zhuanzhuan/mp3/btn.mp3" preload="preload" controls></audio>
+		<div class="header">
+			<div class="head">
+				<img src="zhuanzhuan/img/title@2x.png" />
+			</div>
+			<div class="back" id="back">返回</div>
+			<div class="sound">
+				<img src="zhuanzhuan/img/btn_sound@2x.png" />
+			</div>
+		</div>
+		<div class="light">
+			<img src="zhuanzhuan/img/light2@2x.png" />
+		</div>
+		<div id="grid-box" class="grid-box">
+			<div class="grid-row">
+				<div class="grid-item item1">
+					<div class="img-box">
+						<img src="" />
+					</div>
+				</div>
+				<div class="grid-item item2">
+					<div class="img-box"><img src="" /></div>
+				</div>
+				<div class="grid-item item3">
+					<div class="img-box"><img src="" /></div>
+				</div>
+				<div class="grid-item item4">
+					<div class="img-box"><img src="" /></div>
+				</div>
+			</div>
+			<div class="grid-row">
+				<div class="grid-item item12">
+					<div class="img-box"><img src="" /></div>
+				</div>
+				<div class="grid-item item5">
+					<div class="img-box"><img src="" /></div>
+				</div>
+			</div>
+			<div class="grid-row">
+				<div class="grid-item item11">
+					<div class="img-box"><img src="" /></div>
+				</div>
+				<div class="grid-item item6">
+					<div class="img-box"><img src="" /></div>
+				</div>
+			</div>
+			<div class="grid-row">
+				<div class="grid-item item10">
+					<div class="img-box"><img src="" /></div>
+				</div>
+				<div class="grid-item item9">
+					<div class="img-box"><img src="" /></div>
+				</div>
+				<div class="grid-item item8">
+					<div class="img-box"><img src="" /></div>
+				</div>
+				<div class="grid-item item7">
+					<div class="img-box"><img src="" /></div>
+				</div>
+			</div>
+			<div class="probability-box">
+				<div class="probability">
+					<p></p>
+				</div>
+				<div class="need-pay">
+					<p></p>
+				</div>
+			</div>
+			<div class="zhuli-box" hidden="hidden">
+				<div class="logo-box">
+					<img src="zhuanzhuan/img/MXFLOGOB@3x.png" />
+				</div>
+				<div class="text-box">
+					<img src="zhuanzhuan/img/zhuli-text.png" />
+				</div>
+			</div>
+		</div>
+		<canvas id="canvas" width="300" height="300"></canvas>
+		<div class="swiper-box">
+			<div class="swiper-container swiper-text">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">* 绝对公平、公开、公正的算法 *</div>
+					<div class="swiper-slide">* 一次可选3个商品，中啥得啥 *</div>
+					<div class="swiper-slide">* 趣味无穷、新体验 *</div>
+				</div>
+			</div>
+			<div class="master"></div>
+		</div>
+		<div class="pro-check-box"></div>
+		<div class="multiple-box">
+			<div class="multiple-item active multiple1" val='1' hidden="hidden">
+				<img src="zhuanzhuan/img/mul1_ac.png" />
+			</div>
+			<div class="multiple-item multiple2" val='3' hidden="hidden">
+				<img src="zhuanzhuan/img/multiplex2.png" />
+			</div>
+			<div class="multiple-item multiple3" val='5' hidden="hidden">
+				<img src="zhuanzhuan/img/multiplex3.png" />
+			</div>
+		</div>
+		<div class="footer">
+			<div class="protocol rule-btn">协议</div>
+			<div class="foot-btn" id="zhuanzhuan_btn">
+				<img src="zhuanzhuan/img/zhuanzhuan@2x.png" />
+			</div>
+			<div class="rule rule-btn">规则</div>
+		</div>
+		<div class="alert alert-no-zoom" id="alert-rule" hidden="hidden">
+			<div class="alert-rule">
+				<div class="hide-btn">
+					<img src="zhuanzhuan/img/btn_closed@2x.png" />
+				</div>
+				<div class="rule-title">
+					<img src="zhuanzhuan/img/rule@2x.png" />
+				</div>
+				<p class="rule-title2">绝对公平公开算法</p>
+				<div class="rule-content">
+					<img src="zhuanzhuan/img/Group9@2x.png" />
+				</div>
+				<div class="certain-btn" id="rule_certain"></div>
+			</div>
+		</div>
+		<div class="alert alert-no-zoom" id="alert-protocol" hidden="hidden">
+			<div class="alert-protocol">
+				<div class="hide-btn">
+					<img src="zhuanzhuan/img/btn_closed@2x.png" />
+				</div>
+				<div class="protocol-title">
+					<img src="zhuanzhuan/img/protocol-title@2x.png"/>
+				</div>
+				<div class="protocol-content" hidden='hidden'>
+					<textarea readonly></textarea>
+				</div>
+				<div class="protocol-check-box">
+					<div class="check-box"><img src="zhuanzhuan/img/check.png" /></div>
+					<p>我已我已阅读并同意 <br><span id="protocol_text">《用户条款》</span> </p>
+				</div>
+				<div class="clear-float"></div>
+				<div class="certain-btn" id="protocol_certain"></div>
+			</div>
+		</div>
+		<div class="alert alert-zoom" id="win_box" hidden='hidden'>
+			<div class="winning-box alert-container">
+				<div class="hide-btn">
+					<img src="zhuanzhuan/img/btn_closed@2x.png" />
+				</div>
+				<div class="win_canvas">
+					<canvas id="win_canvas"></canvas>
+					<div class="draw-box"></div>
+				</div>
+
+				<div class="winning-footer">
+					<p>长按上图向好友炫耀一下</p>
+					<div class="again-btn">
+						<img src="zhuanzhuan/img/btn_jixu.png" />
+					</div>
+					<p class="checkOrder">没出货？立即处理 ></p>
+				</div>
+			</div>
+		</div>
+		<div class="alert alert-zoom" id="card_box" hidden="hidden">
+			<div class="card-box alert-container">
+				<div class="hide-btn">
+					<img src="zhuanzhuan/img/btn_closed@2x.png" />
+				</div>
+				<div class="img-box">
+					<img src="zhuanzhuan/img/cardtest2.png" />
+				</div>
+				<div class="again-btn">
+					<img src="zhuanzhuan/img/btn_jixu copy@3x.png" />
+				</div>
+			</div>
+		</div>
+		<div class="alert alert-zoom" id="pro_show_box" hidden>
+			<div class="pro-show-box alert-container">
+				<div class="hide-btn">
+					<img src="zhuanzhuan/img/btn_closed@2x.png" />
+				</div>
+				<div class="con-box">
+					<div class="not-win-box con-box-item" id="not_win" hidden>
+						<div class="not-title">
+							<img src="zhuanzhuan/img/weizhongjiang.png" />
+						</div>
+						<p class="prompt">竟然没有中奖，一定是姿势不对~</p>
+						<div class="again-btn">
+							<img src="zhuanzhuan/img/btn_jixu copy@3x.png" />
+						</div>
+					</div>
+					<div class="chuhuo-ing-box con-box-item" id="chuhuo_ing" hidden="hidden">
+						<div class="loding">
+							<img src="zhuanzhuan/img/loding.png" />
+						</div>
+					</div>
+					<div class="con-box-item chuhuo-suc-box" id="chuhuo_suc" hidden="hidden">
+						<div class="title">
+							<img src="zhuanzhuan/img/chuhuo-suc.png" />
+						</div>
+						<p class="prompt">请在出货口取货</p>
+						<div class="again-btn">
+							<img src="zhuanzhuan/img/btn_jixu.png" />
+						</div>
+						<p class="telPhone">还有问题？联系客服></p>
+					</div>
+					<div class="con-box-item chuhuo-err-box" id="chuhuo_err" hidden="hidden">
+						<div class="title">
+							<img src="zhuanzhuan/img/chuhuo-err.png" />
+						</div>
+						<div class="tuikuan-btn" id="tuikuan">
+							<img src="zhuanzhuan/img/tuikuan.png" />
+						</div>
+						<p class="telPhone">联系客服></p>
+					</div>
+					<div class="con-box-item chuhuo-shiyong-box" id="chuhuo_shiyong" hidden="hidden">
+						<div class="title">
+							<img src="zhuanzhuan/img/chuhuo-err.png" />
+						</div>
+						<p class="prompt">已领取￥9.9红包</p>
+						<div class="tuikuan-btn" id="shiyong">
+							<img src="zhuanzhuan/img/shiyong.png" />
+						</div>
+						<p class="after-use">以后再用></p>
+					</div>
+				</div>
+				<div class="pro-box">
+					<div class="img-box">
+						<img src="https://mianquserver.oss-cn-hangzhou.aliyuncs.com/product/goods/2018-04-01/00824670-f833-42b5-b182-4ac2b41c06c6.jpg" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="alert alert-not-win" hidden>
+			<div class="not-win-box con-box-item ad_box" id="not_win_ad">
+				<div class="hide-btn"></div>
+				<div class="not-title">
+					<img src="zhuanzhuan/img/weizhongjiang.png" />
+				</div>
+				<p class="prompt">竟然没有中奖，一定是姿势不对~</p>
+				<div class="btn-box">
+					<div class="again-btn btn">继续转</div>
+					<div class="show-ad-btn btn">完成</div>
+				</div>
+				<div class="again-btn" hidden>
+					<img src="zhuanzhuan/img/btn_jixu copy@3x.png" />
+				</div>
+				<div class="iframe">
+					<p>百万惊喜红包点击瓜分</p>
+				</div>
+			</div>
+		</div>
+		<div class="alert alert-not-win-iframe" hidden>
+			<div class="not-win-box-iframe con-box-item ad_box" id="not_win_ad_iframe">
+				<div class="btn_closed">
+					<img src="zhuanzhuan/img/btn_close.png" alt="">
+				</div>
+				<div class="not-title">
+					<img src="zhuanzhuan/img/weizhongjiang.png" />
+				</div>
+				<p class="prompt">竟然没有中奖，一定是姿势不对~</p>
+				<div class="again-btn">
+					<img src="zhuanzhuan/img/btn_jixu copy@3x.png" />
+				</div>
+				<div class="iframe">
+					<iframe id="iframe" src="" width="" height="" scrolling ="no"></iframe>
+				</div>
+			</div>
+		</div>
+		<div class="toast" hidden="hidden">
+			<p></p>
+		</div>
+		<div id="loading" hidden="hidden">
+			<img src="img/uloading.gif" alt="">
+		</div>
+		<div id="container"></div>
+		<script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+		<script type="text/javascript" src="js/publicFun.js?version=2.6.4.17"></script>
+		<script src="js/components.js?version=2.6.4.17"></script>
+		<script type="text/javascript" src="zhuanzhuan/js/swiper-3.4.2.jquery.min.js"></script>
+		<script type="text/javascript" src="zhuanzhuan/js/protocolText.js"></script>
+		<script type="text/javascript" src="js/kfm-h5.js?version=2.6.4.17"></script>
+    <script type="text/javascript" src="js/ad.js?version=2.6.4.17"></script>
+		<script type="text/javascript">
+			var pageversion = versionControl.timeversion();
+
+			versionControl.loadScript('zhuanzhuan/js/Animation.js?version=' + pageversion ,function(){
+				versionControl.loadScript('zhuanzhuan/js/index.js?version=' + pageversion)
+				versionControl.loadScript('zhuanzhuan/js/Page.js?version=' + pageversion)
+			})
+
+		</script>
+	</body>
+
+</html>
